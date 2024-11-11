@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <title>Employee Registration </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <style>
+    tr,td{
+                padding: 11px;
+            } 
+            body{
+                background-color: rgb(93, 147, 165);
+            }
+            label{
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                color: brown;
+            }
+            table{
+                /* margin-left: auto; */
+                /* margin-right: auto; */
+                align: center;
+                border: 1;
+            }
+            h1{
+                color:black;
+            }
+        </style>
+    </head>
+        <body>
+            <form name="MyForm" onsubmit="return ValidateForm()" method="post">
+               
+                    <table>
+                       <center><h1>Employee Registration Form </h1></center>        
+                        <tr>
+                            <td>
+                                <label>FirstName</label>
+                            </td>    
+                            <td><input type="text" id="Firstname" name="" placeholder="Enter Your Firstname"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>LastName</label>
+                            </td>    
+                            <td><input type="text" id="Lastname" placeholder="Enter Your Lastname"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Age</label>
+                            </td>    
+                            <td><input type="number" id="Age" name="Age" placeholder="Enter your Age"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Qualification</label>
+                            </td>    
+                            <td><input type="text" id="Qualification" name="Qualification" placeholder="Enter your Qualification"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Date of Birth</label>
+                            </td>    
+                            <td><input type="date" id="Date" name="Dob"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Graduation Completion date</label>
+                            </td>
+                            <td><input type="date" id="Date" name="Ug">
+                        </tr>
+                        <!--tr>
+                            <td>
+                                <label>Graduation Completion date</label>
+                            </td>    
+                            <td><input type="date" id="Date" name="id"></td>
+                        </tr-->
+                        <tr>
+                            <td>
+                                <label>Address</label>
+                            </td>
+                            <td><textarea id="Address" name="Address" placeholder="Enter your Adress"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Gender</label>
+                            </td>
+                            <td><input type="radio" Name="Gender" id="Gender">Male<br>
+                            <input type="radio" Name="Gender" id="Gender">Female</td>
+                            </tr>
+                        <tr>
+                            <td>
+                                <label>Language Known</label>
+                            </td>
+                            <td><input type="checkbox"id="Languages Known"name="Languages Known" value="Tamil">
+                            <for="Tamil">Tamil<br>
+                            <input type="checkbox"id="Languages Known"name="Languages Known" value="English">
+                            <for="English">English<br>
+                            <input type="checkbox"id="Languages Known"name="Languages Known" value="Hindi">
+                            <for="Hindi">Hindi</td><br>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><input type="reset">
+                            <input type="submit"></td>
+                        </tr>
+                    </table>
+            </form>
+        </body>
+</html>
+<script>
+    function ValidateForm(){
+        alert("One");
+        var DobValue = document.forms["MyForm"]["Dob"].value;
+        var UgDate = document.forms["MyForm"]["Ug"].value;
+        alert(DobValue);
+        alert(UgDate);
+        const Dob=new Date(DobValue);
+        const Ug=new Date(UgDate);
+        alert(Dob);
+        alert(Ug);
+        alert(Ug.getTime()<=Dob.getTime());
+        alert("test condition");
+        if(Ug.getTime()<=Dob.getTime()){
+            alert("please enter PG Date Of Completion CORRECTLY");
+            document.forms["MyForm"]["Ug"].value="";
+            //document.forms["MyForm"]["Ug"].focus();
+            return false;
+
+        }
+    }
+</script>

@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>Student Form</title>
+        <script src="httpss://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <style>
+        body{
+            background-color: rgb(109, 134, 182);
+        } 
+        h1{
+            text-color:rgb(147, 32, 78)
+        }
+        table{
+            margin-left: auto;
+            margin-left: auto;
+        }
+        tr{
+            padding: 25px;
+        }
+
+    </style>
+    <body>
+        <table align="center">
+            <form name="StudentForm" onsubmit="return ValidateForm()" method="post">
+                <center><h1>Student Information</h1></center>
+                <tr>
+                    <td>
+                        <label>StudentName</label>
+                        <td>
+                            <input type="text" id="LoginName" name="StudentName" placeholder="please Enter Your Name">
+                        </td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Age</label>
+                        <td>
+                            <input type="number"id="Age" name="Age" placeholder="please Enter Your age">
+                        </td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>DOB</label>
+                        <td>
+                            <input type="date" id="DOB" name="DOB">
+                        </td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>10th Completion date</label>
+                        <td>
+                            <input type="date" id="CompletionDate" name="CompletionDate">
+                        </td>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                    <input type="reset">
+                    <input type="submit">
+                    </td>
+                </tr>
+
+            </form>
+        </table>
+    </body>
+</html>
+<script>
+    // alert("Hai");
+    function ValidateForm(){
+        // alert("Welcome to page");
+        let x=document.forms["StudentForm"]["StudentName"].value;
+        let y=document.forms["StudentForm"]["Age"].value;
+        let a=document.forms["StudentForm"]["DOB"].value;
+        let b=document.forms["StudentForm"]["CompletionDate"].value;
+        // alert("x");
+        if(x == ""){
+            alert("please Enter your Name");
+            document.forms["StudentForm"]["StudentName"].focus();
+            return false;
+        }else if(y ==""){
+            alert("please Enter your Age");
+            return false;
+        }else if(a ==""){
+            alert("please Enter your DOB");
+            return false;
+        }else if(b ==""){
+            alert("please Enter your CompletionDate");
+            return false;
+        }    
+        const DOB=new Date(a);
+        const CompletionDate = new Date(b);
+        alert(CompletionDate.getTime());
+        alert(DOB.getTime());
+        if(CompletionDate.getTime()<=DOB.getTime()){
+            alert("please Enter CompletionDate Correctly");
+            document.forms["StudentForm"]["CompletionDate"].value="";
+            document.forms["StudentForm"]["CompletionDate"].focus();
+            return false;
+        }
+    }
+
+
+</script>

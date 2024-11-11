@@ -1,0 +1,51 @@
+<html>
+    <header>
+     <body style="background-color: pink;">
+        <title>login page</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <!--form action="Index.Html" name="LoginForm" onsubmit="return validateForm()" method="post" -->
+            <form action="index.Html" name="LoginForm" onsubmit="return ValidateForm()" method="post">
+                <!--form name="LoginForm"-->
+            <table align="center">
+              <center><h1 style="color:darkolivegreen;">LOGIN PAGE</h1></center>
+            <tr>
+                <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;">LoginId11</td>
+                <td><input type="text" name="LoginName"></td>
+            </tr>
+            <tr>
+                <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Password</td>
+                <td><input type="password" name="PwdName"></td>
+            </tr>
+            <tr>
+                <td><input type="reset"></td>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+        </form>
+        </table>
+     </body> 
+    </header>
+</html>
+<script>
+   function ValidateForm(){
+    alert("functions");
+    let var_login = document.forms["LoginForm"]["LoginName"].value;
+    let var_Pwd = document.forms["LoginForm"]["PwdName"].value;
+    if(var_login == ""){
+    alert("Please Enter Your Login Name");
+    return false;
+   }
+   if(var_Pwd ==""){
+    alert("please Enter Your Password");
+    return false;
+   }
+//    alert(var_login !="babi" || var_Pwd!="1212");
+   if(var_login =="babi" && var_Pwd =="1212"){
+    alert("Login Success");
+   }
+   else{
+    alert("Please Enter Correct Login and Password");
+    return false;
+   }
+   }
+</script>
